@@ -57,9 +57,9 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Physics2D.OverlapBox(groundCheckPos.position, groundCheckSize, 0, groundLayer))
         {
-            return true;
+            return false;
         }
-        return false;
+        return true;
     }
 
     private void OnDrawGizmosSelected()
