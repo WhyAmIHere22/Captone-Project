@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    private Transform player;
-    public float chaseSpeed = 2f;
+    public Transform player;
+    public float chaseSpeed = 3f;
     public float jumpForce = 2f;
     public LayerMask groundLayer;
 
@@ -19,33 +19,34 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        player = GameObject.FindWithTag("Player").GetComponent<Transform>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        //Is Grounded
+        //Is Grounded?
         isGrounded = Physics2D.Raycast(transform.position, Vector2.down, 1f, groundLayer);
+
         //Player Direction
         float direction = Mathf.Sign(player.position.x - transform.position.x);
-        //Player Above Detection
-        bool isPlayerAbove = Physics2D.Raycast(transform.position, Vector2.up, 3f, 1 << player.gameObject.layer);
+
+        //Player above detection
+        bool isPlayerAbove = Physics2D.Raycast(transform.position, Vector2.up, 5f, 1 << player.gameObject.layer);
 
         if (isGrounded)
         {
-            //Chase Player
+            //Chase player
             rb.velocity = new Vector2(direction * chaseSpeed, rb.velocity.y);
 
-            //Jump if there a gap ahead && no ground infront
-            //else if theres player above and platofrm above
+            //Jump if there's gap ahead && no ground infront
+            //else if there's player above and platform above
 
-            //if Ground
+            //If Ground
             RaycastHit2D groundInFront = Physics2D.Raycast(transform.position, new Vector2(direction, 0), 2f, groundLayer);
-            //if gap
+            //If gap
             RaycastHit2D gapAhead = Physics2D.Raycast(transform.position + new Vector3(direction, 0, 0), Vector2.down, 2f, groundLayer);
-            //if platform above
-            RaycastHit2D platformAbove = Physics2D.Raycast(transform.position, Vector2.up, 3f, groundLayer);
+            //If platform above
+            RaycastHit2D platformAbove = Physics2D.Raycast(transform.position, Vector2.up, 5f, groundLayer);
 
             if(!groundInFront.collider && !gapAhead.collider)
             {
@@ -58,17 +59,16 @@ public class Enemy : MonoBehaviour
         }
     }
 
-
     private void FixedUpdate()
     {
         if(isGrounded && shouldJump)
         {
             shouldJump = false;
-            Vector2 direction = (player.position -transform.position).normalized;
+            Vector2 direction = (player.position - transform.position).normalized;
 
             Vector2 jumpDirection = direction * jumpForce;
 
-            rb.AddForce(new Vector2(direction.x, jumpForce), ForceMode2D.Impulse);
+            rb.AddForce(new Vector2(jumpDirection.x, jumpForce), ForceMode2D.Impulse);
         }
     }
 }

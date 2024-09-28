@@ -86,5 +86,7 @@ public class GameController : MonoBehaviour
     {
         int nextLevelIndex = (currentLevelIndex == levels.Count - 2) ? 0 : currentLevelIndex + 1;
         LoadLevel(nextLevelIndex, true);
+
+
     }
 }
