@@ -10,6 +10,7 @@ public class Coins : MonoBehaviour, IItem
     public void Collect()
     {
         OnCoinCollect.Invoke(worth);
+        SoundEffectManager.Play("Coin");
         Destroy(gameObject);
     }
 } 

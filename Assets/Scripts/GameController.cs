@@ -52,7 +52,7 @@ public class GameController : MonoBehaviour
         survivedLevelsCount = 0;
         LoadLevel(0, false);
         OnReset.Invoke();
-        Time.timeScale = 1;
+        Time.timeScale = 0;
     }
 
     void IncreaseProgressAmount(int amount)
@@ -84,7 +84,7 @@ public class GameController : MonoBehaviour
 
     void LoadNextLevel()
     {
-        int nextLevelIndex = (currentLevelIndex == levels.Count - 2) ? 0 : currentLevelIndex + 1;
+        int nextLevelIndex = (currentLevelIndex == levels.Count - 3) ? 0 : currentLevelIndex + 1;
         LoadLevel(nextLevelIndex, true);
 
 

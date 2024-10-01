@@ -29,6 +29,7 @@ public class PlayerHealth : MonoBehaviour
         if (enemy)
         {
             TakeDamage(enemy.damage);
+            SoundEffectManager.Play("PlayerHit");
         }
     }
 
