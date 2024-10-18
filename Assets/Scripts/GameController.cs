@@ -21,6 +21,8 @@ public class GameController : MonoBehaviour
 
     public static event Action OnReset;
 
+    public GameObject pauseMenu; // Assign the PauseMenu in the Inspector
+
     // Start is called before the first frame update
     void Start()
     {
@@ -96,4 +98,42 @@ public class GameController : MonoBehaviour
     {
         FindObjectOfType<EndSceneManager>().LoadEndScene();
     }
+
+
+    private bool isPaused = false;
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (isPaused)
+                ResumeGame();
+            else
+                PauseGame();
+        }
+    }
+
+    public void PauseGame()
+    {
+        isPaused = true;
+        Time.timeScale = 0f; // Stop time
+        pauseMenu.SetActive(true); // Show the pause menu
+    }
+
+    public void ResumeGame()
+    {
+        isPaused = false;
+        Time.timeScale = 1f; // Resume time
+        pauseMenu.SetActive(false); // Hide the pause menu
+    }
+
+    public void QuitGame()
+    {
+        // Add functionality to quit the game or return to the main menu
+        // This could be implemented as needed
+        Debug.Log("Quitting game...");
+        Application.Quit();
+    }
 }
+
+
