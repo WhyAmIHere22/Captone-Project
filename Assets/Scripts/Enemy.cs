@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public Transform player;
-    public float chaseSpeed = 3f;
+    private Transform player;
+    public float chaseSpeed = 2f;
     public float jumpForce = 2f;
     public LayerMask groundLayer;
 
@@ -15,10 +15,18 @@ public class Enemy : MonoBehaviour
 
     public int damage = 1;
 
+    public int maxHealth = 3;
+    private int currentHealth;
+    private SpriteRenderer spriteRenderer;
+    private Color ogColor;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        player = GameObject.FindWithTag("Player").GetComponent<Transform>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        currentHealth = maxHealth;
+        ogColor = spriteRenderer.color;
     }
 
     // Update is called once per frame
@@ -70,5 +78,27 @@ public class Enemy : MonoBehaviour
 
             rb.AddForce(new Vector2(jumpDirection.x, jumpForce), ForceMode2D.Impulse);
         }
+    }
+
+    public void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+        StartCoroutine(FlashWhite());
+        if(currentHealth <= 0)
+        {
+            Die();
+        }
+    }
+
+    private IEnumerator FlashWhite()
+    {
+        spriteRenderer.color = Color.white;
+        yield return new WaitForSeconds(0.2f);
+        spriteRenderer.color = ogColor;
+    }
+
+    void Die()
+    {
+        Destroy(gameObject);
     }
 }
