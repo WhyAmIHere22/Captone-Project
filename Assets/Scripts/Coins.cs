@@ -1,7 +1,11 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
+
+
+
 
 public class Coins : MonoBehaviour, IItem
 {
@@ -11,6 +15,7 @@ public class Coins : MonoBehaviour, IItem
     {
         OnCoinCollect.Invoke(worth);
         SoundEffectManager.Play("Coin");
-        Destroy(gameObject);
+        gameObject.SetActive(false);
+        
     }
 } 

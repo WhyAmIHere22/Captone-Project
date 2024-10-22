@@ -5,13 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class EndSceneManager : MonoBehaviour
 {
-    public void LoadEndScene()
+    public void OnMainMenuClick()
     {
-        SceneManager.LoadScene("EndScene");
-    }
-
-    public void ReturnToStartScene()
-    {
-        SceneManager.LoadScene("StartScene");
+        SceneManager.LoadScene(0);
     }
 }

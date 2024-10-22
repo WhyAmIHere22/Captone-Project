@@ -690,7 +690,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -648, y: 21}
+  m_AnchoredPosition: {x: -648, y: 227}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &686633123
@@ -824,7 +824,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 822, y: 353}
+  m_AnchoredPosition: {x: 822, y: 142}
   m_SizeDelta: {x: 681.8069, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &961386145
@@ -847,21 +847,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Gather coins to Progress
-
-    Once bar is filled Hold E
-
-    W/Space to
-    Jump
-
-    A/D to Move
-
-    Avoid the at all costs
-
-    If you die you lose
-
-    Complete
-    level 4 to win'
+  m_text: "-Gather coins to progress to \n  level 3\n-Once bar is filled Hold E\n-W/Space
+    to Jump\n-A/D to Move\n-Avoid the at all costs\n-If you die you lose\n-Complete
+    level 3 to win\n-Left Click to shoot"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -972,7 +960,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -517, y: -106}
+  m_AnchoredPosition: {x: -517, y: 128}
   m_SizeDelta: {x: 681.8069, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1022326113
@@ -995,22 +983,23 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'UI-Cohle Contardo
+  m_text: '-UI-Cohle Contardo
 
-    HUD-Cohle Contardo
+    -HUD-Cohle Contardo
 
-    Music-Boadrius
+    -Music-Boadrius
 
-    SFX-UNIVERSFIELD/Driken5482
+    -SFX-UNIVERSFIELD/Driken5482
 
-    Character
+    -Character
     Model-Kin Ng
 
-    Enviroment-Cainos
+    -Enviroment-Cainos
 
-    Backround-Karsiori
+    -Backround-Karsiori
 
-'
+    -Playtests-Isaac
+    Yaffe (Ty Isaac!)'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1392,7 +1381,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 706, y: 472}
+  m_AnchoredPosition: {x: 706, y: 245}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1733557997

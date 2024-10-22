@@ -207,7 +207,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 843450342}
         m_TargetAssemblyTypeName: EndSceneManager, Assembly-CSharp
-        m_MethodName: LoadEndScene
+        m_MethodName: OnMainMenuClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

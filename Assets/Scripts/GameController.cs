@@ -57,6 +57,13 @@ public class GameController : MonoBehaviour
         LoadLevel(0, false);
         OnReset.Invoke();
         Time.timeScale = 1;
+       
+        GameObject coin = GameObject.Find("Coin");
+        if (coin = null)
+        {
+            coin.SetActive(true);
+        }
+
     }
 
     void IncreaseProgressAmount(int amount)
@@ -92,11 +99,6 @@ public class GameController : MonoBehaviour
         LoadLevel(nextLevelIndex, true);
 
 
-    }
-
-    public void OnLevelComplete()
-    {
-        FindObjectOfType<EndSceneManager>().LoadEndScene();
     }
 
 
